@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="dao" class="com.sist.web.EmpDAO"
+	 c:driver="oracle.jdbc.driver.OracleDriver"
+	 p:url="jdbc:oracle:thin:@localhost:1521:XE"
+	 p:password="happy"
+	 p:username="hr"
+	/>
+	 <!-- scope=prototype은 객체주소가 달라지고 singleton(생략)은 주소값이 동일 -->
+	<!-- 값 = 생성자(매개변수) c, setXxx() = p 는 ~에 값을 채워라 뜻 -->
+</beans>
