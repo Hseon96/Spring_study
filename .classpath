@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="SpringContainer_2/src/main/java"/>
+	<classpathentry kind="src" path="SpringContainerProject_1/src/main/java"/>
+	<classpathentry kind="src" path="SpringContainerProject/src"/>
+	<classpathentry kind="src" path="SpringDIproject/src/main/java"/>
+	<classpathentry kind="src" path="SpringDIProject2/src/main/java"/>
+	<classpathentry kind="src" path="SpringDIproject3/src/main/java"/>
+	<classpathentry kind="src" path="SpringDIProject7/src/main/java"/>
+	<classpathentry kind="src" path="SpringDlProject6/src/main/java"/>
+	<classpathentry kind="src" path="SpringMVCBoardProject/src/main/java"/>
+	<classpathentry kind="src" path="SpringMVCProject1/src/main/java"/>
+	<classpathentry kind="src" path="SpringMVCProject2/src/main/java"/>
+	<classpathentry kind="src" path="SpringMVCProject3/src/main/java"/>
+	<classpathentry kind="src" path="SpringMVCProject4/src/main/java"/>
+	<classpathentry kind="lib" path="SpringContainer_2/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringDIproject/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringDIProject2/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringDIProject7/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringDlProject6/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringMVCBoardProject/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringMVCProject1/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringMVCProject2/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringMVCProject3/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="SpringMVCProject4/src/main/webapp/WEB-INF/lib/ojdbc8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="SpringContainerProject/bin"/>
+</classpath>

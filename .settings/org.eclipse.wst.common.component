@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Spring_study">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringContainer_2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringContainerProject_1/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringContainerProject/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringDIproject/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringDIProject2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringDIproject3/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringDIProject7/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringDlProject6/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringMVCBoardProject/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringMVCProject1/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringMVCProject2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringMVCProject3/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SpringMVCProject4/src/main/java"/>
+        <property name="context-root" value="Spring_study"/>
+        <property name="java-output-path" value="/Spring_study/SpringContainerProject/bin"/>
+    </wb-module>
+</project-modules>

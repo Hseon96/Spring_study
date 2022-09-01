@@ -23,7 +23,7 @@
 		  <c:forEach var="vo" items="${list }">
 		    <div class="col-md-3">
 			    <div class="thumbnail">
-			      <a href="detail.do?fno=${vo.fno }"> <!-- ?는 GET !!  -->
+			      <a href="detail_before.do?fno=${vo.fno }"> <!-- ?는 GET !!  -->
 			        <img src="${vo.poster }" alt="Lights" style="width:100%">
 			        <div class="caption">
 			          <p>${vo.name }</p>
@@ -39,6 +39,28 @@
 			  ${curpage } page / ${totalpage } pages
 			  <a href="list.do?page=${curpage<totalpage?curpage+1:curpage }" class="btn btn-sm btn-danger">다음</a>
 			</div>
+		</div>
+		 <div style="height: 50px"></div>
+		<div class="row">
+       <h3>최근 방문 상품</h3>
+       <a href="cookie_all_delete.do" class="btn btn-xs btn-danger">쿠키 전체삭제</a>
+        <hr>
+        <c:if test="${size<1 }">
+          <span style="color: blue"> 방문기록이 없습니다</span>
+        </c:if>
+        <c:if test="${size>0 }">
+          <c:forEach var="vo" items="${fList }" varStatus="s"> <!-- 트랜잭션 : 일괄 처리 -->
+         <c:if test="${s.index<6 }">  <!--쿠키 6개이상 출력안되게  -->
+          	<div class="col-md-2">
+		      <div class="thumbnail">
+		        <a href="#">
+		          <img src="${vo.poster }" alt="Lights" style="width:100%">
+		        </a>
+		      </div>
+		    </div>
+		    </c:if>
+          </c:forEach>
+       </c:if> 
 		</div>
 	</div>
 </body>

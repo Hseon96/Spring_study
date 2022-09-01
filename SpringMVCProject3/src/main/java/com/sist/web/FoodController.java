@@ -6,6 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.sist.dao.*;
 /*
  * 		모델 제작 (요청에 처리)
@@ -44,7 +49,7 @@ public class FoodController {
 	// 필요한 객체를 멤버로 생성해서 주소값을 받는다 .. @autowired
 	// 스프링에서 생성된 객체를 받아서 사용 => 자동으로 주소값을 얻어 온다
 	@GetMapping("food/list.do")
-	public String food_list(String page,Model model)
+	public String food_list(String page,Model model,HttpServletRequest request)
 	{		//              사용자 요청값         전송 객체
 		//                  ======================== 여기만 바뀌었다 /////이거랑
 		if(page==null)
@@ -59,9 +64,27 @@ public class FoodController {
 		List<FoodVO> list=dao.foodListData(map);
 		int totalpage=dao.foodTotalPage();
 		//////////////////////////////////
+		Cookie[] cookies=request.getCookies();
+		List<FoodVO> fList=new ArrayList<FoodVO>();
+		if(cookies!=null)
+		{
+			for(int i=cookies.length-1;i>=0;i--)
+			{
+				if(cookies[i].getName().startsWith("food"))
+				{
+					String fno=cookies[i].getValue(); 
+					FoodVO vo=dao.foodDetailData(Integer.parseInt(fno));
+					fList.add(vo);
+					
+				}
+			}
+		}
+		//////////////////////////////////
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("list", list);
 		model.addAttribute("totalpage", totalpage);
+		model.addAttribute("fList", fList);
+		model.addAttribute("size" , fList.size()); // 이건 왜..?
 		///////////////////////////////////////////
 		return "list";
 	}
@@ -75,6 +98,31 @@ public class FoodController {
 		return "detail";
 	}
 	
+	@GetMapping("food/detail_before.do")
+	public String food_detail_before(int fno,HttpServletResponse response)
+	{
+		Cookie cookie=new Cookie("food"+fno, String.valueOf(fno));
+		cookie.setPath("/");
+		cookie.setMaxAge(60*60*24);
+		response.addCookie(cookie);
+		return "redirect:detail.do?fno="+fno;
+	}
+	
+	@GetMapping("food/cookie_all_delete.do")
+	public String food_cookie_all_delete(HttpServletRequest request,HttpServletResponse response)
+	{
+		Cookie[] cookies=request.getCookies();
+		for(int i=cookies.length-1;i>=0;i--)
+		{
+			if(cookies[i].getName().equals("food"))
+			{
+				cookies[i].setPath("/");
+				cookies[i].setMaxAge(0);
+				response.addCookie(cookies[i]);
+			}
+		}
+		return "redirect:list.do";
+	}
 	@GetMapping("food/find.do")
 	public String food_find() // 출력해놓고 클릭은 int 맨처음에 출력부터면 string
 	{
